@@ -1,0 +1,17 @@
+version: "3"
+services:
+    proxy:
+        restart: always
+        build: ./
+        networks:
+          - site1_default
+          - site2_default
+        ports:
+          - 80:80
+          - 443:443
+networks:
+    site1_default:
+      external: true
+    site2_default:
+      external: true
+
